@@ -12,7 +12,7 @@ class Form extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      hasTrunfo,
+      // hasTrunfo,
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
@@ -51,6 +51,8 @@ class Form extends React.Component {
             data-testid="attr1-input"
             value={ cardAttr1 }
             onChange={ onInputChange }
+            min={ 0 }
+            max={ 90 }
           />
         </label>
         <label htmlFor="card-attr2">
@@ -62,6 +64,8 @@ class Form extends React.Component {
             data-testid="attr2-input"
             value={ cardAttr2 }
             onChange={ onInputChange }
+            min={ 0 }
+            max={ 90 }
           />
         </label>
         <label htmlFor="card-attr3">
@@ -73,6 +77,8 @@ class Form extends React.Component {
             data-testid="attr3-input"
             value={ cardAttr3 }
             onChange={ onInputChange }
+            min={ 0 }
+            max={ 90 }
           />
         </label>
         <label htmlFor="card-image">
