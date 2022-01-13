@@ -91,6 +91,7 @@ class App extends React.Component {
       cardAttr3: '0',
       cardImage: '',
       cardRare: 'Normal',
+      cardTrunfo: false,
       isSaveButtonDisabled: true,
     });
   }
@@ -116,6 +117,7 @@ class App extends React.Component {
       cardTrunfo,
       hasTrunfo,
       isSaveButtonDisabled,
+      deckMaster,
     } = this.state;
     return (
       <div>
@@ -144,6 +146,25 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+        <ul>
+          {deckMaster.map((cardDeck) => (
+            <li key={ cardDeck.cardName }>
+              <h1>{ cardDeck.cardName }</h1>
+              <img
+                src={ cardDeck.cardImage }
+                alt={ cardDeck.cardName }
+              />
+              <p>{ cardDeck.cardDescription }</p>
+              <ul>
+                <li>{ cardDeck.cardAttr1 }</li>
+                <li>{ cardDeck.cardAttr2 }</li>
+                <li>{ cardDeck.cardAttr3 }</li>
+              </ul>
+              <p>{ cardDeck.cardRare }</p>
+              {cardTrunfo && <p>Super Trunfo</p>}
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }
