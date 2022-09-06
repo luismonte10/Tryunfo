@@ -33,7 +33,7 @@ class App extends React.Component {
     }, () => this.handleButtonValidation());
   }
 
-  handleButtonValidation = () => {
+  handleButtonValidation() {
     const minNum = 0;
     const maxNum = 90;
     const maxPoints = 210;
@@ -100,8 +100,6 @@ class App extends React.Component {
     const { cardTrunfo } = this.state;
     if (cardTrunfo) {
       this.setState({ hasTrunfo: true });
-    } else {
-      this.setState({ hasTrunfo: false });
     }
   }
 
@@ -161,7 +159,7 @@ class App extends React.Component {
                 <li>{ cardDeck.cardAttr3 }</li>
               </ul>
               <p>{ cardDeck.cardRare }</p>
-              {cardTrunfo && <p>Super Trunfo</p>}
+              {cardDeck.cardTrunfo && <p>Super Trunfo</p>}
             </li>
           ))}
         </ul>
